@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="/res/icon.png" />
+  <link rel="canonical" href="https://biory.app/ja/" />
+  <link rel="alternate" hreflang="ja" href="https://biory.app/ja/" />
+  <link rel="alternate" hreflang="en" href="https://biory.app/en/" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href=https://stitches.hyperyolo.com/output.css rel="stylesheet">
+  <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.6.3/css/all.css
+    integrity=sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/ crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>Biory</title>
+  <meta name="description" content="Biory" />
+  <meta name="thumbnail" content="https://biory.app/res/biory.svg">
+  <meta property="og:url" content="https://biory.app">
+  <meta property="og:title" content="Biory">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://biory.app/res/biory_ogp.png" />
+  <meta property="og:site_name" content="Biory">
+  <meta property="og:description" content="Biory">
+  <meta name="twitter:card" content="summary_large_image">
+  </meta>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCCNF4Y2F3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-DCCNF4Y2F3');
+  </script>
+  <style>
+    span.logo {
+      font-family: Poppins, cursive;
+      font-size: 2.0rem
+    }
+
+    span.logo span.kerning {
+      letter-spacing: 0.075rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header x-data="{ mobileMenuOpen : false }"
+    class="flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-white py-6 px-6 relative">
+    <a class="flex flex-row">
+      <img src="/res/biory.svg" style="width:45px; height:45px">
+      <span class="logo pl-4">Bio<span class="kerning">ry</span></span>
+    </a>
+    <button @click="mobileMenuOpen = !mobileMenuOpen"
+      class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+      <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <nav
+      class="absolute md:relative top-24 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:items-center md:space-x-6 font-semibold md:font-normal w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+      :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}" @click.away="mobileMenuOpen = false">
+      <a href="#aboutbiory" class="inline-block py-2 text-gray-900 hover:text-gray-700 no-underline">Bioryとは</a>
+      <a href="#feature" class="inline-block py-2 text-gray-900 hover:text-gray-700 no-underline">特徴</a>
+      <a href="#aboutus" class="inline-block py-2 text-gray-900 hover:text-gray-700 no-underline">サービスへの想い</a>
+      <button class="text-sm bg-black hover:bg-text-gray-800 text-white mt-3 md:mt-0 py-2 px-3"
+        onclick="location.href = 'https://console.biory.app/'">ログイン</button>
+    </nav>
+  </header>
+
+  <!-- insert here -->
+  <main class="container mx-auto antialiased text-gray-900 mx-4 my-16" x-data="setup()">
+    <div class="text-center">
+      <h1 class="m-4 text-2xl font-medium md:text-3xl lg:text-3xl">
+        もっと自分らしいプロフィールに仕上げよう
+      </h1>
+      <p class="text-sm font-normal text-gray-600">
+        用途に合わせたわかりやすいプランをご用意しました。
+      </p>
+    </div>
+
+    <!-- Plan switch -->
+    <div class="flex items-center justify-center mt-10 space-x-4">
+      <span class="invisible text-xs font-bold rounded-lg bg-blue-500 text-white px-2">17%お得</span>
+      <span class="text-base font-medium">月額</span>
+      <button class="relative rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
+        <div class="w-16 h-8 transition bg-blue-500 rounded-full shadow-md outline-none"></div>
+        <div
+          class="absolute inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform bg-white rounded-full shadow-sm top-1 left-1"
+          :class="{ 'translate-x-0': billPlan == 'monthly', 'translate-x-8': billPlan == 'annually' }"></div>
+      </button>
+      <span class="text-base font-medium">年額</span>
+      <span class="text-xs font-bold rounded-lg bg-green-500 text-white px-2">17%お得</span>
+    </div>
+
+    <!-- Plans -->
+    <div
+      class="flex flex-col items-center justify-center mt-16 mx-3 space-y-8 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
+      <template x-for="(plan, i) in plans" x-key="i">
+        <section
+          class="flex flex-col w-full max-w-sm p-12 space-y-6 bg-white rounded-lg shadow-lg border-solid border border-light-blue-500">
+          <!-- Price -->
+          <div class="flex-shrink-0">
+            <span class="text-4xl font-medium tracking-tight" :class="plan.name == 'Pro' ? 'text-green-500' : ''"
+              x-text="`¥${billPlan == 'monthly' ? plan.price.monthly : plan.price.annually}`"></span>
+            <ruby x-show="plan.name == 'Pro'">
+              <span class="text-gray-600" x-text="billPlan == 'monthly' ? '/月' : '/年'"></span>
+              <rt class="font-semibold">(税込)</rt>
+            </ruby>
+          </div>
+
+          <!--  -->
+          <div class="flex-shrink-0 pb-6 space-y-2 border-b">
+            <h2 class="text-2xl font-normal" x-text="plan.name"></h2>
+            <p class="text-sm text-gray-600" x-text="plan.discretion"></p>
+          </div>
+
+          <!-- Features -->
+          <ul class="flex-1 space-y-4">
+            <template x-for="(feature, i) in plan.features" x-key="i">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="ml-3 text-sm lg:text-base font-medium" x-text="feature"></span>
+              </li>
+            </template>
+          </ul>
+
+          <!-- Button -->
+          <div class="flex-shrink-0 pt-4">
+            <a :href="plan.name == 'Pro' ? `https://console.biory.app/signup?price=${billPlan}&plan=pro` : 'https://console.biory.app/signup'"
+              class="inline-flex items-center justify-center w-full max-w-xs px-4 py-2 transition-colors border rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 font-bold"
+              :class="plan.name == 'Pro' ? 'bg-blue-500 text-white hover:bg-blue-700' : 'hover:bg-blue-500 hover:text-white'"
+              x-text="`${plan.name}プランに登録`"></a>
+          </div>
+        </section>
+      </template>
+    </div>
+
+    <div class="text-center mt-16">
+      <h1 class="mb-4 text-2xl font-medium md:text-3xl lg:text-3xl">Proアカウントの主な機能</h1>
+    </div>
+
+    <div class="flex flex-col lg:flex-row mt-12 gap-8 justify-center items-center">
+      <div class="flex-col">
+        <div class="mb-6 text-gray-700 text-sm font-semibold">1️⃣ 覚えやすい・伝えやすいURL</div>
+        <div style="font-size: 9px; width: 313px"
+          class="shadow-lg rounded-xl border-solid border border-light-blue-500 py-6">
+          <div class="flex px-3 items-center">
+            <span style="width: 80px; height: 80px" class="rounded-full bg-gray-200 mr-4"></span>
+            <div class="flex flex-col gap-2">
+              <div class="flex">
+                <div>
+                  <div style="width: 55px" class="bg-gray-200 h-4 mr-2"></div>
+                  <span class="font-semibold">Posts</span>
+                </div>
+                <div>
+                  <div style="width: 55px" class="bg-gray-200 h-4 mr-2"></div>
+                  <span class="font-semibold">Follower</span>
+                </div>
+                <div>
+                  <div style="width: 55px" class="bg-gray-200 h-4 mr-2"></div>
+                  <span class="font-semibold">Following</span>
+                </div>
+              </div>
+              <div>
+                <span style="font-size: 12px" class="font-bold">@kent</span>
+                <div style="width: 100px" class="bg-gray-200 h-2 mb-1"></div>
+                <div style="width: 150px" class="bg-gray-200 w-16 h-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center px-4 py-3">
+            <span style="font-size: 30px; color: #4e4e4e" class="material-icons mr-2">public</span>
+            <span class="font-bold text-blue-500 text-3xl">kent.yay.bio</span>
+          </div>
+          <hr />
+        </div>
+      </div>
+
+      <div class="flex-col">
+        <div class="mb-6 text-gray-700 text-sm font-semibold">2️⃣ 独自のURLアイコン</div>
+        <div style="font-size: 9px; width: 313px"
+          class="shadow-lg rounded-xl border-solid border border-light-blue-500 w-1/4 py-2">
+          <div class="flex px-3 pb-2 items-center">
+            <div class="flex items-center rounded-full w-full bg-gray-200 py-1 px-4">
+              <span class="material-icons mr-2 text-blue-500">festival</span>
+              <span class="text-lg font-bold text-gray-800">kent.yay.bio</span>
+            </div>
+          </div>
+          <hr />
+          <div class="flex justify-center p-2">
+            <div style="width: 80px; height: 80px" class="rounded-full bg-gray-200"></div>
+          </div>
+          <div class="flex justify-center">
+            <div class="rounded-full w-5/6 h-8 bg-gray-200"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-col">
+        <div class="mb-6 text-gray-700 text-sm font-semibold">3️⃣ 独自のページフッター</div>
+        <div style="font-size: 9px; width: 313px"
+          class="shadow-lg rounded-xl border-solid border border-light-blue-500 w-1/4 py-3">
+          <div class="flex justify-center mb-2">
+            <div class="rounded-full w-5/6 h-8 bg-gray-200"></div>
+          </div>
+          <div class="flex justify-center mb-4">
+            <div class="rounded-full w-5/6 h-8 bg-gray-200"></div>
+          </div>
+          <div class="flex justify-center">
+            <span class="material-icons text-blue-500" style="font-size: 50px">festival</span>
+          </div>
+          <div class="flex justify-center">
+            <div class="w-12 h-1 bg-blue-500"></div>
+          </div>
+          <div class="flex justify-center text-blue-500 text-base">
+            <span class="font-bold">I</span>❤︎<span class="font-light">BIORY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="font-sans bg-white py-8 px-4">
+    <div
+      class="mx-auto container overflow-hidden flex flex-col md:flex-row justify-between pb-4 text-center md:text-left">
+      <a href="#" class="block mr-4 w-full md:w-1/4">
+        <span class="logo">Bio<span class="kerning">ry</span></span>
+      </a>
+      <div class="w-full text-gray-900 mt-6 md:mt-0 leading-normal">
+        <h4 id="aboutus" class="py-2 uppercase font-bold tracking-wide">私たちのサービスに対する想い</h4>
+        <p>
+          現在では、クリエイターを対象としたウェブサイトビルダーが数多くあります。とくに、TikTokやInstagramなどのソーシャルメディアに向けて提供されるサービスは沢山みつけることができます。私たちの「Biory」は、クリエイターのみなさんの創作活動を支援するために、ものの数分で自己紹介ページを自分好みにデコレーションできるウェブサイトビルダーを開発するに至りました。これから、クリエイターと応援するファンをつないでオリジナル商品の流通をお手伝いしたり、さらにブランド広告主のちからで創作活動の拡大させてもらうなど、クリエイターがBioryを通じてさまざまな収益源を構築して、クリエイター・ファン・ブランド広告主が共に成長していける世界が私たちの願いです。
+        </p>
+      </div>
+      <div class="text-gray-700 flex flex-col items-center w-full md:w-1/4 mt-6 md:mt-0">
+        <!--
+        <h4 class="inline-block py-2 px-3 uppercase font-bold tracking-wide text-gray-900">Follow Us</h4>
+        <div class="flex pl-0 md:pl-4 justify-start">
+          <a class="block flex items-center text-gray-900 hover:text-black mr-6 no-underline"
+            href="https://instagram.com/biory_app"><i class="fab fa-instagram"></i></a>
+          <a class="block flex items-center text-gray-900 hover:text-black no-underline"
+            href="https://twitter.com/biory_app"><i class="fab fa-twitter"></i></a>
+        </div>
+        -->
+      </div>
+    </div>
+    <div class="pt-4 mt-4 text-gray-700 text-xs border-t border-gray-300 text-center">
+      <div style="text-align:center; margin-bottom: 2ex">
+        <a href="/en/" style="margin-right:1ex; font-size:small">🇺🇸 EN</a> |
+        <span style="margin-left:1ex; font-size:small; font-weight:bold">🇯🇵 JA</span>
+      </div>
+      <div style="text-align:center; margin-bottom: 2ex">
+        <p>©2021 Chia Inc. Rights reserved.</p>
+        <p>運営会社：<a href="https://chi.as/">チア株式会社</a></p>
+      </div>
+      <p>掲載されている商品またはサービスなどの名称は、各社の商標または登録商標です。</p>
+    </div>
+  </footer>
+
+  <script>
+    const setup = () => {
+      return {
+        isNavOpen: false,
+
+        billPlan: 'monthly',
+
+        plans: [
+          {
+            name: 'Pro',
+            discretion: 'ブランディングのためのカスタマイズ機能とマーケティング機能を強化しました。',
+            price: {
+              monthly: 1100,
+              annually: 11000,
+            },
+            features: [
+              '覚えやすい・伝えやすいURL',
+              '独自のURLアイコンを設定',
+              '独自のページフッターを設定',
+              '独自の検索エンジン用情報を設定',
+              '独自のSNSリンク用情報を設定',
+              'Google Analytics連携',
+            ],
+          },
+          {
+            name: 'Free',
+            discretion: 'フォロワーの目を惹くあなたらしいページの作成機能を満載しました。',
+            features: [
+              '作成できるリンク数の制限なし',
+              '背景画像から自動的にテーマを作成',
+              'YouTubeビデオを埋め込み',
+              'リンクのアニメーション',
+              'リンクやビデオのスケジュール設定',
+              'アクセス数・クリック数を追跡',
+            ],
+            price: {
+              monthly: 0,
+              annually: 0,
+            },
+          },
+        ],
+      }
+    }
+  </script>
+
+</body>
+
+</html>
