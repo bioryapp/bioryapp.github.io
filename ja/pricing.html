@@ -81,13 +81,19 @@
         もっと自分らしいプロフィールに仕上げよう
       </h1>
       <p class="text-sm font-normal text-gray-600">
-        用途に合わせたわかりやすいプランをご用意しました。
+        用途に合わせたわかりやすいアカウントプランをご用意しました。
       </p>
+    </div>
+
+    <!-- Button -->
+    <div class="flex justify-center mt-10">
+      <a href="https://console.biory.app/signup?account=regular"
+        class="inline-flex items-center justify-center w-full max-w-xs px-4 py-3 transition-colors rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 font-bold bg-blue-500 text-white hover:bg-blue-700"
+        >レギュラーアカウント登録</a>
     </div>
 
     <!-- Plan switch -->
     <div class="flex items-center justify-center mt-10 space-x-4">
-      <span class="invisible text-xs font-bold rounded-lg bg-blue-500 text-white px-2">17%お得</span>
       <span class="text-base font-medium">月額</span>
       <button class="relative rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
@@ -97,23 +103,24 @@
           :class="{ 'translate-x-0': billPlan == 'monthly', 'translate-x-8': billPlan == 'annually' }"></div>
       </button>
       <span class="text-base font-medium">年額</span>
-      <span class="text-xs font-bold rounded-lg bg-green-500 text-white px-2">17%お得</span>
     </div>
 
     <!-- Plans -->
     <div
-      class="flex flex-col items-center justify-center mt-16 mx-3 space-y-8 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
+      class="flex flex-col items-center justify-center mt-10 mx-3 space-y-8 lg:flex-row lg:items-stretch lg:space-x-8 lg:space-y-0">
       <template x-for="(plan, i) in plans" x-key="i">
         <section
           class="flex flex-col w-full max-w-sm p-12 space-y-6 bg-white rounded-lg shadow-lg border-solid border border-light-blue-500">
           <!-- Price -->
           <div class="flex-shrink-0">
-            <span class="text-4xl font-medium tracking-tight" :class="plan.name == 'Pro' ? 'text-green-500' : ''"
+            <span class="text-4xl font-medium tracking-tight" :class="plan.name == 'レギュラー' ? 'text-green-500' : ''"
               x-text="`¥${billPlan == 'monthly' ? plan.price.monthly : plan.price.annually}`"></span>
-            <ruby x-show="plan.name == 'Pro'">
+            <span x-show="plan.name == 'レギュラー'">
+              <span class="text-gray-600">(税込)</span>
               <span class="text-gray-600" x-text="billPlan == 'monthly' ? '/月' : '/年'"></span>
-              <rt class="font-semibold">(税込)</rt>
-            </ruby>
+              <span x-show="billPlan == 'annually'"
+                class="text-sm font-bold rounded-full bg-red-400 text-white ml-3 px-2 py-1">17%お得</span>
+            </span>
           </div>
 
           <!--  -->
@@ -136,20 +143,18 @@
               </li>
             </template>
           </ul>
-
-          <!-- Button -->
-          <div class="flex-shrink-0 pt-4">
-            <a :href="plan.name == 'Pro' ? `https://console.biory.app/signup?price=${billPlan}&plan=pro` : 'https://console.biory.app/signup'"
-              class="inline-flex items-center justify-center w-full max-w-xs px-4 py-2 transition-colors border rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 font-bold"
-              :class="plan.name == 'Pro' ? 'bg-blue-500 text-white hover:bg-blue-700' : 'hover:bg-blue-500 hover:text-white'"
-              x-text="`${plan.name}プランに登録`"></a>
-          </div>
         </section>
       </template>
     </div>
 
-    <div class="text-center mt-16">
-      <h1 class="mb-4 text-2xl font-medium md:text-3xl lg:text-3xl">Proアカウントの主な機能</h1>
+    <div class="flex justify-center mt-16">
+      <a href="https://console.biory.app/signup"
+        class="inline-flex items-center justify-center w-full max-w-xs px-4 py-3 transition-colors border rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 font-bold hover:bg-blue-500 hover:text-white"
+        >デビューアカウント登録</a>
+    </div>
+
+    <!-- <div class="text-center mt-16">
+      <h1 class="mb-4 text-2xl font-medium md:text-3xl lg:text-3xl">レギュラーアカウントの主な機能</h1>
     </div>
 
     <div class="flex flex-col lg:flex-row mt-12 gap-8 justify-center items-center">
@@ -230,7 +235,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
 
   <footer class="font-sans bg-white py-8 px-4">
@@ -279,23 +284,7 @@
 
         plans: [
           {
-            name: 'Pro',
-            discretion: 'ブランディングのためのカスタマイズ機能とマーケティング機能を強化しました。',
-            price: {
-              monthly: 1100,
-              annually: 11000,
-            },
-            features: [
-              '覚えやすい・伝えやすいURL',
-              '独自のURLアイコンを設定',
-              '独自のページフッターを設定',
-              '独自の検索エンジン用情報を設定',
-              '独自のSNSリンク用情報を設定',
-              'Google Analytics連携',
-            ],
-          },
-          {
-            name: 'Free',
+            name: 'デビュー',
             discretion: 'フォロワーの目を惹くあなたらしいページの作成機能を満載しました。',
             features: [
               '作成できるリンク数の制限なし',
@@ -309,6 +298,23 @@
               monthly: 0,
               annually: 0,
             },
+          },
+          {
+            // name: 'Top Creator',
+            name: 'レギュラー',
+            discretion: 'ブランディングのためのカスタマイズ機能とマーケティング機能を強化しました。',
+            price: {
+              monthly: 1100,
+              annually: 11000,
+            },
+            features: [
+              'デビューアカウントの全ての機能',
+              '独自のURLアイコンを設定',
+              '独自のページフッターを設定',
+              '独自の検索エンジン用情報を設定',
+              '独自のSNSリンク用情報を設定',
+              'Google Analytics連携',
+            ],
           },
         ],
       }
