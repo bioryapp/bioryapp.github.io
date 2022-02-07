@@ -22,7 +22,8 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://biory.app/res/biory_ogp.png" />
   <meta property="og:site_name" content="Biory（バイオリー）: Your Biography, Your Brand.">
-  <meta property="og:description" content="Biory（バイオリー）は、ソーシャルメディアユーザーのためのスマホ向けのリンクまとめツールです。セルフブランディングや自己紹介ページ、自分のフォロワーへの発信まとめなど、ご自由にお使いいただけます。あなたのバイオグラフィーを、あなたのブランドに。">
+  <meta property="og:description"
+    content="Biory（バイオリー）は、ソーシャルメディアユーザーのためのスマホ向けのリンクまとめツールです。セルフブランディングや自己紹介ページ、自分のフォロワーへの発信まとめなど、ご自由にお使いいただけます。あなたのバイオグラフィーを、あなたのブランドに。">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="apple-itunes-app" content="app-id=1605714974">
   </meta>
@@ -45,6 +46,19 @@
 
     span.logo span.kerning {
       letter-spacing: 0.075rem;
+    }
+
+    .image-badge {
+      display: block;
+      margin-top: 2em;
+      width: 130px;
+      height: 48px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .appstore-badge {
+      background-image: url('/res/ja/appstore-black.svg');
     }
   </style>
 </head>
@@ -76,7 +90,8 @@
   </header>
 
   <section class="bg-gray-100 text-gray-900 py-4 px-4" role="alert">
-    <a href="https://medium.com/biory/%E4%BB%A4%E5%92%8C3%E5%B9%B410%E6%9C%8815%E6%97%A5-%E6%96%B0%E3%81%97%E3%81%84%E3%82%AD%E3%83%A3%E3%83%83%E3%83%81%E3%83%95%E3%83%AC%E3%83%BC%E3%82%BA-your-biography-your-brand-%E3%82%92%E5%88%A9%E7%94%A8%E9%96%8B%E5%A7%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F-9cb7dfb7734f">
+    <a
+      href="https://medium.com/biory/%E4%BB%A4%E5%92%8C3%E5%B9%B410%E6%9C%8815%E6%97%A5-%E6%96%B0%E3%81%97%E3%81%84%E3%82%AD%E3%83%A3%E3%83%83%E3%83%81%E3%83%95%E3%83%AC%E3%83%BC%E3%82%BA-your-biography-your-brand-%E3%82%92%E5%88%A9%E7%94%A8%E9%96%8B%E5%A7%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F-9cb7dfb7734f">
       <div class="container items-center flex max-w-xl m-auto leading-none">
         <span class="flex rounded-full bg-gray-300 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
         <span class="mr-2 text-left mr-auto">Biory（バイオリー）のキャッチフレーズを新しく策定させていただきました（2021年10月15日）❗️</span>
@@ -96,6 +111,7 @@
         <button
           class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent"
           onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
+        <a href="https://apps.apple.com/jp/app/biory/id1605714974"><figure class="image-badge appstore-badge"></figure></a>
       </div>
       <div class="w-full lg:w-1/2 py-6">
         <iframe src="https://biory.app/biory-sample" class="mx-auto my-4"
@@ -127,28 +143,32 @@
           onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
       </div>
       <div class="flex w-full lg:w-1/2 py-6 justify-center px-3">
-        <img src="https://images.unsplash.com/photo-1622929610538-fc41bdce80c6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwyMTAxOTR8MHwxfGFsbHx8fHx8fHx8fDE2MzYwMjA4OTg&ixlib=rb-1.2.1&q=80&w=600&h=500" class="rounded-3xl opacity-80"/>
+        <img
+          src="https://images.unsplash.com/photo-1622929610538-fc41bdce80c6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwyMTAxOTR8MHwxfGFsbHx8fHx8fHx8fDE2MzYwMjA4OTg&ixlib=rb-1.2.1&q=80&w=600&h=500"
+          class="rounded-3xl opacity-80" />
       </div>
     </div>
   </section>
-    <!-- どんなページでも１分で -->
-    <section class="font-sans">
-      <div class="container m-auto flex flex-col md:flex-row max-w-xl">
-        <div class="flex flex-col w-full lg:w-1/2 justify-center items-start px-4 py-8">
-          <!-- <label for="tagline" class="tracking-loose">Biory</label> -->
-          <h1 class="my-4 font-bold text-4xl">誰でもかんたんにホームページが作れます</h1>
-          <p class="leading-normal mb-4">
-            質問に答えていくだけで大丈夫！スマホだけで大丈夫！Biory（バイオリー）だからカンタンに作れます。
-          </p>
-          <button
-            class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent"
-            onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
-        </div>
-        <div class="flex w-full lg:w-1/2 py-6 justify-center px-3">
-          <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwyMTAxOTR8MHwxfGFsbHx8fHx8fHx8fDE2MzYwMjExNDA&ixlib=rb-1.2.1&q=80&w=600&h=500" class="rounded-3xl opacity-80" />
-        </div>
+  <!-- どんなページでも１分で -->
+  <section class="font-sans">
+    <div class="container m-auto flex flex-col md:flex-row max-w-xl">
+      <div class="flex flex-col w-full lg:w-1/2 justify-center items-start px-4 py-8">
+        <!-- <label for="tagline" class="tracking-loose">Biory</label> -->
+        <h1 class="my-4 font-bold text-4xl">誰でもかんたんにホームページが作れます</h1>
+        <p class="leading-normal mb-4">
+          質問に答えていくだけで大丈夫！スマホだけで大丈夫！Biory（バイオリー）だからカンタンに作れます。
+        </p>
+        <button
+          class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent"
+          onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
       </div>
-    </section>
+      <div class="flex w-full lg:w-1/2 py-6 justify-center px-3">
+        <img
+          src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwyMTAxOTR8MHwxfGFsbHx8fHx8fHx8fDE2MzYwMjExNDA&ixlib=rb-1.2.1&q=80&w=600&h=500"
+          class="rounded-3xl opacity-80" />
+      </div>
+    </div>
+  </section>
   <!-- じぶんのビジネス -->
   <section class="bg-gray-100 font-sans">
     <div class="container m-auto flex flex-col md:flex-row max-w-xl">
@@ -159,11 +179,13 @@
           最初Biory（バイオリー）ではコストをかけずに、基本的な機能はすべて無料で使えます。もちろん、ビジネスに使いたい方にはどんどん機能アップできるように有料機能もご用意、もっと上を目指したくなった時にぜひご利用ください。
         </p>
         <button
-        class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent"
-        onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
+          class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent"
+          onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
       </div>
       <div class="flex w-full lg:w-1/2 py-6 justify-center px-3">
-        <img src="https://images.unsplash.com/photo-1520413766594-6e635f8d9908?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwyMTAxOTR8MHwxfGFsbHx8fHx8fHx8fDE2MzYwMjExODc&ixlib=rb-1.2.1&q=80&w=600&h=500" class="rounded-3xl opacity-80" />
+        <img
+          src="https://images.unsplash.com/photo-1520413766594-6e635f8d9908?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwyMTAxOTR8MHwxfGFsbHx8fHx8fHx8fDE2MzYwMjExODc&ixlib=rb-1.2.1&q=80&w=600&h=500"
+          class="rounded-3xl opacity-80" />
       </div>
     </div>
   </section>
@@ -182,7 +204,7 @@
           onclick="location.href = 'https://console.biory.app/signup'">アカウントを無料で開設</button>
       </div>
       <div class="flex w-full py-6 justify-center px-3">
-        <img src="https://biory.app/res/Biory_Mocks2_release.png"/>
+        <img src="https://biory.app/res/Biory_Mocks2_release.png" />
       </div>
     </div>
   </section>

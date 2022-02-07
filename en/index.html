@@ -41,8 +41,22 @@
       font-family: Poppins, cursive;
       font-size: 2.0rem
     }
+
     span.logo span.kerning {
       letter-spacing: 0.07rem;
+    }
+
+    .image-badge {
+      display: block;
+      margin-top: 2em;
+      width: 130px;
+      height: 48px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .appstore-badge {
+      background-image: url('/res/en/appstore-black.svg');
     }
   </style>
 </head>
@@ -93,6 +107,7 @@
         <button
           class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 uppercase text-sm border border-black hover:border-transparent"
           onclick="location.href = 'https://console.biory.app/signup'">Get started for free</button>
+        <a href="https://apps.apple.com/us/app/biory/id1605714974"><figure class="image-badge appstore-badge"></figure></a>
       </div>
       <div class="flex w-full lg:w-1/2 py-6 justify-center">
         <iframe src="https://biory.app/karubi"
