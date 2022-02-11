@@ -47,16 +47,23 @@
     }
 
     .image-badge {
-      display: block;
+      display: inline-block;
       margin-top: 2em;
-      width: 130px;
       height: 48px;
       background-size: 100% 100%;
       background-repeat: no-repeat;
     }
 
     .appstore-badge {
+      width: 130px;
       background-image: url('/res/en/appstore-black.svg');
+    }
+
+    .googleplay-badge {
+      width: 170px;
+      background-image: url('/res/en/googleplay.svg');
+      background-position: -47px -12px;
+      background-size: 150% 150%;
     }
   </style>
 </head>
@@ -107,7 +114,14 @@
         <button
           class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 uppercase text-sm border border-black hover:border-transparent"
           onclick="location.href = 'https://console.biory.app/signup'">Get started for free</button>
-        <a href="https://apps.apple.com/us/app/biory/id1605714974"><figure class="image-badge appstore-badge"></figure></a>
+        <div>
+          <a href="https://apps.apple.com/us/app/biory/id1605714974" target="_blank">
+            <figure class="image-badge appstore-badge"></figure>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=as.chi.me360&hl=en&gl=US" target="_blank">
+            <figure class="ml-3 image-badge googleplay-badge"></figure>
+          </a>
+        </div>
       </div>
       <div class="flex w-full lg:w-1/2 py-6 justify-center">
         <iframe src="https://biory.app/karubi"

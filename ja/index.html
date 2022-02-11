@@ -49,16 +49,23 @@
     }
 
     .image-badge {
-      display: block;
+      display: inline-block;
       margin-top: 2em;
-      width: 130px;
       height: 48px;
       background-size: 100% 100%;
       background-repeat: no-repeat;
     }
 
     .appstore-badge {
+      width: 130px;
       background-image: url('/res/ja/appstore-black.svg');
+    }
+
+    .googleplay-badge {
+      width: 170px;
+      background-image: url('/res/ja/googleplay.svg');
+      background-position: -47px -12px;
+      background-size: 150% 150%;
     }
   </style>
 </head>
@@ -90,8 +97,7 @@
   </header>
 
   <section class="bg-gray-100 text-gray-900 py-4 px-4" role="alert">
-    <a
-      href="https://medium.com/biory/令和4年2月10日-ios版のbioryアプリをリリースしました-6f5cec27e3fd">
+    <a href="https://medium.com/biory/令和4年2月10日-ios版のbioryアプリをリリースしました-6f5cec27e3fd">
       <div class="container items-center flex max-w-xl m-auto leading-none">
         <span class="flex rounded-full bg-gray-300 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
         <span class="mr-2 text-left mr-auto">Biory（バイオリー）を簡単に使えるiOS版スマートフォンアプリをリリースさせていただきました（2022年2月10日）❗️</span>
@@ -111,7 +117,14 @@
         <button
           class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent"
           onclick="location.href = 'https://console.biory.app/signup'">Bioryを無料で始める</button>
-        <a href="https://apps.apple.com/jp/app/biory/id1605714974"><figure class="image-badge appstore-badge"></figure></a>
+        <div>
+          <a href="https://apps.apple.com/jp/app/biory/id1605714974" target="_blank">
+            <figure class="image-badge appstore-badge"></figure>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=as.chi.me360&hl=ja&gl=JP" target="_blank">
+            <figure class="ml-3 image-badge googleplay-badge"></figure>
+          </a>
+        </div>
       </div>
       <div class="w-full lg:w-1/2 py-6">
         <iframe src="https://biory.app/biory-sample" class="mx-auto my-4"
