@@ -25,6 +25,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="apple-itunes-app" content="app-id=1605714974">
   </meta>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -37,12 +39,17 @@
     gtag('config', 'G-DCCNF4Y2F3');
   </script>
   <style>
+    #aboutbiory {
+      font-family: Poppins;
+    }
+
     span.logo {
       font-family: Poppins, cursive;
       font-size: 2.0rem
     }
 
     span.logo span.kerning {
+      font-family: Poppins, cursive;
       letter-spacing: 0.07rem;
     }
 
@@ -105,7 +112,7 @@
     <div class="container m-auto flex flex-col md:flex-row max-w-xl">
       <div class="flex flex-col w-full lg:w-1/2 justify-center items-start px-4 py-8">
         <!-- <label for="tagline" class="tracking-loose">Biory</label> -->
-        <h1 class="my-4 font-semibold text-lg">Your Biography, Your Brand.</h1>
+        <h1 id="aboutbiory" class="my-4 font-semibold text-4xl">Your Biography, <br />Your Brand.</h1>
         <p class="leading-normal mb-4">
           Biory is a mobile webpage creation service for social media profiles that allows Internet users who use
           multiple social media, such as TikTok and Instagram, to quickly create a useful webpage to introduce
